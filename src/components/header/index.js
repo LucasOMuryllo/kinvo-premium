@@ -3,85 +3,85 @@ import { Outlet, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { GiBigDiamondRing } from 'react-icons/gi';
 import {
-    HiArrowUp,
-    HiOutlineTrendingUp,
-    HiChevronDown,
-    HiMenu,
+  HiArrowUp,
+  HiOutlineTrendingUp,
+  HiChevronDown,
+  HiMenu,
 } from 'react-icons/hi';
 import Logo from '../../assets/logo/logo';
 import NavCard from './navCardWrapper';
 import axios from '../../services/axios';
 
 export default function Header() {
-    const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
 
-    useEffect(() => {
-        axios
-            .get()
-            .then((res) => {
-                setData(res.data.data.snapshotByPortfolio);
-            })
-            .catch((e) => {
-                return e;
-            });
-    }, [setData, data]);
+  useEffect(() => {
+    axios
+      .get()
+      .then((res) => {
+        setData(res.data.data.snapshotByPortfolio);
+      })
+      .catch((e) => {
+        return e;
+      });
+  }, [setData, data]);
 
-    return (
-        <>
-            <HeaderContainer>
-                <NavLink to="/" className="logo">
-                    <Logo />
-                    premium
-                </NavLink>
-                <Nav>
-                    <NavLink
-                        to="saldo_bruto"
-                        className={({ isActive }) => (isActive ? 'active' : null)}
-                    >
-                        <NavCard
-                            title="saldo bruto"
-                            subTitle={data.equity?.toLocaleString('pt-BR')}
-                            icon={<GiBigDiamondRing />}
-                        />
-                    </NavLink>
-                    <NavLink
-                        to="valor_aplicado"
-                        className={({ isActive }) => (isActive ? 'active' : null)}
-                    >
-                        <NavCard
-                            title="valor aplicado"
-                            subTitle={data.valueApplied?.toLocaleString('pt-BR')}
-                            icon={<HiArrowUp />}
-                        />
-                    </NavLink>
-                    <NavLink
-                        to="rentabilidade"
-                        className={({ isActive }) => (isActive ? 'active' : null)}
-                    >
-                        <NavCard
-                            title="rentabilidade"
-                            subTitle={`${data.percentageProfit?.toLocaleString('pt-BR')}%`}
-                            icon={<HiOutlineTrendingUp />}
-                        />
-                    </NavLink>
-                    <NavLink
-                        to="minha_carteira"
-                        className={({ isActive }) => (isActive ? 'active' : null)}
-                    >
-                        <NavCard
-                            title="carteira"
-                            subTitle="Minha Carteira"
-                            icon={<HiChevronDown />}
-                        />
-                    </NavLink>
-                    <HiMenu size={25} className="hamburguerMenu" />
-                </Nav>
-            </HeaderContainer>
-            <Container>
-                <Outlet />
-            </Container>
-        </>
-    );
+  return (
+    <>
+      <HeaderContainer>
+        <NavLink to="/" className="logo">
+          <Logo />
+          premium
+        </NavLink>
+        <Nav>
+          <NavLink
+            to="saldo_bruto"
+            className={({ isActive }) => (isActive ? 'active' : null)}
+          >
+            <NavCard
+              title="saldo bruto"
+              subTitle={data.equity?.toLocaleString('pt-BR')}
+              icon={<GiBigDiamondRing />}
+            />
+          </NavLink>
+          <NavLink
+            to="valor_aplicado"
+            className={({ isActive }) => (isActive ? 'active' : null)}
+          >
+            <NavCard
+              title="valor aplicado"
+              subTitle={data.valueApplied?.toLocaleString('pt-BR')}
+              icon={<HiArrowUp />}
+            />
+          </NavLink>
+          <NavLink
+            to="rentabilidade"
+            className={({ isActive }) => (isActive ? 'active' : null)}
+          >
+            <NavCard
+              title="rentabilidade"
+              subTitle={`${data.percentageProfit?.toLocaleString('pt-BR')}%`}
+              icon={<HiOutlineTrendingUp />}
+            />
+          </NavLink>
+          <NavLink
+            to="minha_carteira"
+            className={({ isActive }) => (isActive ? 'active' : null)}
+          >
+            <NavCard
+              title="carteira"
+              subTitle="Minha Carteira"
+              icon={<HiChevronDown />}
+            />
+          </NavLink>
+          <HiMenu size={25} className="hamburguerMenu" />
+        </Nav>
+      </HeaderContainer>
+      <Container>
+        <Outlet />
+      </Container>
+    </>
+  );
 }
 
 const HeaderContainer = styled.header`
