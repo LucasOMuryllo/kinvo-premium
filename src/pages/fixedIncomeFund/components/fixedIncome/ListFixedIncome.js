@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import FixedIncomeCards from './FixedIncomeCards';
-import Pagination from './pagination';
+import Pagination from './Pagination';
 
 export default function ListFixedIncome({ data, searchText, searchSort }) {
   // realiza busca por texto

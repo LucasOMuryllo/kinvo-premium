@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import axios from '../../../../services/axios';
-import Inputs from './inputs';
-import ListFixedIncome from './listFixedIncome';
+import Inputs from './Inputs';
+import ListFixedIncome from './ListFixedIncome';
 
 export default function FixedIncome() {
     const [data, setData] = useState([]);

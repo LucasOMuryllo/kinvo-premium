@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi/';
+import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
 
 export default function Pagination({ pages, currentPage, setCurrentPage }) {
     const nextPage = () => {

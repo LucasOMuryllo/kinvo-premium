@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import HeaderCards from './components/headerCards/headerCards';
-import ProfitabilityChart from './components/charts/profitabilityChart';
-import FixedIncome from './components/fixedIncome/fixedIncome';
-import PortfolioBreakdownByType from './components/charts/portfolioBreakdownByType';
-import PortfolioBreakdownByTytle from './components/charts/portfolioBreakdownByTytle';
+import ProfitabilityChart from './components/charts/ProfitabilityChart';
+import FixedIncome from './components/fixedIncome/FixedIncome';
+import PortfolioBreakdownByType from './components/charts/PortfolioBreakdownByType';
+import PortfolioBreakdownByTytle from './components/charts/PortfolioBreakdownByTytle';
 
 export default function RendaFixa() {
   return (
@@ -14,7 +14,7 @@ export default function RendaFixa() {
         <HeaderCards />
       </Header>
       <ProfitabilityCharts>
-        <h3>Rentabilidade dos Titulos</h3>
+        <h3>Rentabilidade dos Títulos</h3>
         <ProfitabilityChart />
       </ProfitabilityCharts>
       <MyFixedIncome>

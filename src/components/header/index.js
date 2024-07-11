@@ -8,7 +8,7 @@ import {
   HiChevronDown,
   HiMenu,
 } from 'react-icons/hi';
-import Logo from '../../assets/logo/logo';
+import Logo from '../../assets/logo';
 import NavCard from './navCardWrapper';
 import axios from '../../services/axios';
 
