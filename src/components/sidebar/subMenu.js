@@ -4,43 +4,43 @@ import styled from 'styled-components';
 import { VscCircleFilled } from 'react-icons/vsc';
 
 export default function SubMenu({ item, index }) {
-    const [subnav, setSubnav] = useState(false);
-    const showSubnav = () => setSubnav(!subnav);
+  const [subnav, setSubnav] = useState(false);
+  const showSubnav = () => setSubnav(!subnav);
 
-    return (
-        <Container>
+  return (
+    <Container>
+      <NavLink
+        to={item.url}
+        onClick={showSubnav}
+        key={index}
+        className={({ isActive }) => (isActive ? 'linkActive' : undefined)}
+      >
+        <div>
+          <span>{item.icon}</span>
+          <LinkTitle>{item.title}</LinkTitle>
+        </div>
+        <ArrowIcon>{item.arrowIcon}</ArrowIcon>
+      </NavLink>
+      {subnav &&
+        item.subNav.map((data, i) => {
+          return (
             <NavLink
-                to={item.url}
-                onClick={showSubnav}
-                key={index}
-                className={({ isActive }) => (isActive ? 'linkActive' : undefined)}
+              to={data.url}
+              key={i}
+              className={({ isActive }) =>
+                isActive ? 'sublinkActive' : undefined
+              }
             >
-                <div>
-                    <span>{item.icon}</span>
-                    <LinkTitle>{item.title}</LinkTitle>
-                </div>
-                <ArrowIcon>{item.arrowIcon}</ArrowIcon>
+              <div>
+                <CircleFilled />
+                <li>{data.title}</li>
+              </div>
+              <ArrowIcon>{item.arrowIcon}</ArrowIcon>
             </NavLink>
-            {subnav &&
-                item.subNav.map((data, i) => {
-                    return (
-                        <NavLink
-                            to={data.url}
-                            key={i}
-                            className={({ isActive }) =>
-                                isActive ? 'sublinkActive' : undefined
-                            }
-                        >
-                            <div>
-                                <CircleFilled />
-                                <li>{data.title}</li>
-                            </div>
-                            <ArrowIcon>{item.arrowIcon}</ArrowIcon>
-                        </NavLink>
-                    );
-                })}
-        </Container>
-    );
+          );
+        })}
+    </Container>
+  );
 }
 
 // Styles

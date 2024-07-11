@@ -25,3 +25,4 @@ const Title = styled.h1`
   font-weight: bold;
   font-size: 20px;
   text-align: center;
+`;

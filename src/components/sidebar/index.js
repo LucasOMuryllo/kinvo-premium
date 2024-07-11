@@ -5,21 +5,20 @@ import { SidebarData } from './data';
 import SubMenu from './subMenu';
 
 export default function Sidebar() {
-    return (
-        <>
-            <Nav>
-                {SidebarData.map((item, index) => {
-                    return <SubMenu item={item} key={index} />;
-                })}
-            </Nav>
-            <Outlet />
-        </>
-    );
+  return (
+    <>
+      <Nav>
+        {SidebarData.map((item, index) => {
+          return <SubMenu item={item} key={index} />;
+        })}
+      </Nav>
+      <Outlet />
+    </>
+  );
 }
 
 const Nav = styled.nav`
   width: 200px;
-  height: 100vh;
   min-width: 200px;
   background-color: #fff;
 `;

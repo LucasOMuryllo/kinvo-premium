@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import GlobalStyles from './styles/globalStyles';
 import Header from './components/header';
 import Sidebar from './components/sidebar';
-import RendaFixa from './pages/FundoRendaFixa';
+import RendaFixa from './pages/fixedIncomeFund';
 import Page404 from './pages/page404';
 
 function App() {
