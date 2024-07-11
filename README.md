@@ -1,6 +1,6 @@
 # Kinvo Premium
 
-Este é um projeto de exemplo para visualização de rendimentos de investimentos em renda fixa.
+Este é um projeto de avaliação técnica exemplo para visualização de rendimentos de investimentos em renda fixa.
 
 ## Ferramentas e Tecnologias Utilizadas
 
@@ -24,11 +24,12 @@ Este é um projeto de exemplo para visualização de rendimentos de investimento
 git clone https://github.com/seu-usuario/kinvo-premium.git
 cd kinvo-premium
 
+```
 ### 2. Instale as dependencias: 
-     - npm install ou com yarn install --
+     npm install ou com yarn install
 
 ### 3. Rode a aplicação com npm ou yarn
-    - npm start ou yarn start --
+    npm start ou yarn start
 
 ### 4. Acesse a aplicação
 'Após rodar os comandos acima, a aplicação estará disponível em http://localhost:3000.'
@@ -36,10 +37,10 @@ cd kinvo-premium
 
 # Estrutura do Projeto
  - src/
- - assets/: Arquivos de mídia e logotipos.
- - components/: Componentes reutilizáveis da aplicação.
- - pages/: Páginas principais da aplicação.
- - services/: Configurações e instâncias de serviços como Axios.
+ - assets/ Arquivos de mídia e logotipos.
+ - components/ Componentes reutilizáveis da aplicação.
+ - pages/ Páginas principais da aplicação.
+ - services/ Configurações e instâncias de serviços como Axios.
  - App.js: Componente raiz da aplicação.
  - index.js: Arquivo de entrada principal.
  - Ao seguir estes passos, você conseguirá rodar a aplicação localmente e visualizar todas as funcionalidades desenvolvidas.
